@@ -1,0 +1,6 @@
+[
+  "org.apache.cordova.geolocation",
+  "org.apache.cordova.device",
+  "https://github.com/phonegap-build/PushPlugin.git",
+  "https://github.com/danwilson/google-analytics-plugin.git"
+]

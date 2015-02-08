@@ -1,0 +1,10 @@
+{
+  "constants": {
+    "ENV": {
+      "apiEndpoint": "http://qa-rtm.capitalone.com",
+      "apiKey" : "25jweQheWUtGDGjLfQJ3jEhY",
+      "googleTrackerId": "UA-59010136-1"
+
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "constants": {
+    "ENV": {
+      "apiEndpoint": "",
+      "apiKey" : "",
+      "googleTrackerId": "UA-59010136-1"
+
+    }
+  }
+}

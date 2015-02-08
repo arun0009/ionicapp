@@ -1,0 +1,13 @@
+node_modules
+.bowerrc
+.tmp
+.sass-cache
+hooks
+bower_components
+coverage
+platforms
+plugins
+*.swp
+*.swo
+*.log
+*.DS_Store
