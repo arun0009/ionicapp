@@ -19,6 +19,8 @@ angular.module('ionicapp.login')
             return auth.$authWithPassword({
                 email: username,
                 password: password
+            }, {
+                remember: "sessionOnly"
             });
         }
     });
