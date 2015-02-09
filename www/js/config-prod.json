@@ -1,8 +1,0 @@
-{
-  "constants": {
-    "ENV": {
-      "apiEndpoint": "",
-      "apiKey" : ""
-    }
-  }
-}

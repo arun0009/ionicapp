@@ -1,9 +1,9 @@
 angular.module('ionicapp.login')
-    .factory('LoginService', function ($resource, $cordovaDevice, ENV) {
+    .factory('LoginService', function ($firebaseAuth, ENV) {
         var authenticateUserDeferredResponse = {};
         return {
             authenticateUserDeferredRequest: function (username, password) {
-                console.log("username is : " + username + " and password is : " +password);
+                console.log("username is : " + username + " and password is : " + password);
                 authenticateUserDeferredResponse = validateUser(username, password);
                 return authenticateUserDeferredResponse;
             },
@@ -14,27 +14,11 @@ angular.module('ionicapp.login')
         }
 
         function validateUser(username, password) {
-            var authenticateUserEndpoint = ENV.apiEndpoint + ENV.authenticateUserEndpoint;
-            var AuthenticateUserResource = $resource(authenticateUserEndpoint);
-
-            var userCredentials = new AuthenticateUserResource();
-            userCredentials.username = username;
-            userCredentials.password = password;
-            userCredentials.device_id = deviceUUID();
-            userCredentials.device_type = ionic.Platform.platform();
-            console.log(angular.toJson(userCredentials));
-            return userCredentials.$save();
+            var ref = new Firebase(ENV.firebaseURL);
+            var auth = $firebaseAuth(ref);
+            return auth.$authWithPassword({
+                email: username,
+                password: password
+            });
         }
-
-        function deviceUUID(){
-            var deviceUUID = 'emualator';
-            try {
-                deviceUUID = $cordovaDevice.getUUID();
-
-            } catch(err) {
-                console.log("unable to get device uuid " + err);
-            }
-            return deviceUUID;
-        }
-
     });

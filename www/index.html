@@ -6,25 +6,25 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
     <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="lib/ionic/js/angular/angular-resource.min.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/angularfire.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/ng-cordova.js"></script>
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
+    <script src="js/app/app.js"></script>
     <script src="js/config/config.js"></script>
 
-    <script src="js/app/app.js"></script>
-    
     <!-- include:js(js/app/**/*.js) -->
     <script src="js/app/login/LoginRouter.js"></script>
     <script src="js/app/login/LoginCtrl.js"></script>
@@ -36,7 +36,7 @@
 </head>
 
 <body ng-app="ionicapp">
-    <ion-nav-view></ion-nav-view>
+<ion-nav-view></ion-nav-view>
 </body>
 
 </html>

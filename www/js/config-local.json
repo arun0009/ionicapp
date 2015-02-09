@@ -1,9 +1,0 @@
-{
-  "constants": {
-    "ENV": {
-      "apiEndpoint": "http://localhost:9090/ionicapp",
-      "apiKey" : "25jweQheWUtGDGjLfQJ3jEhY",
-      "googleTrackerId": "UA-59010136-1"
-    }
-  }
-}
