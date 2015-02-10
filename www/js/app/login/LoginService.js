@@ -1,10 +1,11 @@
 angular.module('ionicapp.login')
-    .factory('LoginService', function ($firebaseAuth, ENV) {
+    .factory('LoginService', function ($rootScope, $firebaseAuth, ENV) {
         var authenticateUserDeferredResponse = {};
         return {
             authenticateUserDeferredRequest: function (username, password) {
                 console.log("username is : " + username + " and password is : " + password);
                 authenticateUserDeferredResponse = validateUser(username, password);
+                $rootScope.username = username;
                 return authenticateUserDeferredResponse;
             },
 
