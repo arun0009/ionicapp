@@ -1,30 +1,25 @@
 <ion-view>
     <ion-content>
-        <form ng-submit="login.authenticateUser()">
+        <form ng-submit="signup.registerUser()">
             <div>
                 <div class="list text-center padding-top-50">
                     <img class="ion-image" src="img/ionic.png" alt="Ionic Demo"/>
                 </div>
 
                 <div class="text-center">
-                    <h1 class="title">SIGN IN</h1>
+                    <h1 class="title">SIGN UP</h1>
                 </div>
 
                 <div class="list">
                     <label class="item item-input item-floating-label center">
-                        <input type="text" ng-model="login.username" placeholder="EMAIL" maxlength="32" autocomplete="off" required>
+                        <input type="text" ng-model="signup.username" placeholder="EMAIL" maxlength="32" autocomplete="off" required>
                     </label>
                     <label class="item item-input item-floating-label center">
-                        <input type="password" ng-model="login.password" placeholder="PASSWORD" maxlength="32" autocomplete="off" required>
+                        <input type="password" ng-model="signup.password" placeholder="PASSWORD" maxlength="32" autocomplete="off" required>
                     </label>
 
                     <button class="button button-full button-positive">Continue</button>
 
-                    <ul class="list">
-                        <li class="item smallfont noborder text-center">
-                            <a ui-sref="signup" class="text-center subdued">Sign Up</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </form>
