@@ -103,7 +103,7 @@ var UserPreferencesCtrl = function ($scope, $state, $cordovaPush, $ionicPopup, U
 
     this.optOutPushNotifications = function () {
         window.localStorage.setItem('launchCount', 1);
-        $state.go("accountsummary");
+        $state.go("chat");
     }
 
 };
