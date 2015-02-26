@@ -39,7 +39,8 @@ This is a hybrid mobile app developed based on ionic framework - http://ionicfra
       * Connect to your remote device
         $ adb -d logcat
         
-You can download and test this app on <a href="https://itunes.apple.com/us/app/ionic-view/id849930087?ls=1&mt=8">Ionic  View</a>
+You can checkout this app by downloading <a href="https://itunes.apple.com/us/app/ionic-view/id849930087?ls=1&mt=8">Ionic  View</a>.
+
 Scan the QR Code once you register and open the Ionic View App.
 
 ###NOTE: We haven't provisioned the app for Push so just select "No Thanks" for Push Notification.
