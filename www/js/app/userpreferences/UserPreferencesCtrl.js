@@ -1,4 +1,4 @@
-var UserPreferencesCtrl = function ($scope, $state, $cordovaPush, $ionicPopup, UserPreferencesService) {
+var UserPreferencesCtrl = function ($scope, $state, $cordovaPush, $ionicPopup, ENV, UserPreferencesService) {
 
     this.enablePushNotifications = function () {
         if (ionic.Platform.isAndroid()) {
@@ -19,7 +19,7 @@ var UserPreferencesCtrl = function ($scope, $state, $cordovaPush, $ionicPopup, U
             //NOTE : We only get device token for iOS over here, for android it gets a callback so we will handle it in handleAndroid function.
             if (ionic.Platform.isIOS()) {
                 registerDeviceTokenForPushNotifications(result.regid);
-                $state.go("accountsummary");
+                $state.go("chat");
             }
         }, function (err) {
             console.log("Register error " + err)
@@ -28,14 +28,15 @@ var UserPreferencesCtrl = function ($scope, $state, $cordovaPush, $ionicPopup, U
 
     function registerDeviceTokenForPushNotifications(deviceToken) {
         UserPreferencesService.pushNotificationDeferredRequest(deviceToken).then(function (response) {
+            console.log("response from parse push :::::::::: " + response);
             window.localStorage.setItem('launchCount', 1);
         }), function (err) {
-            console.log("Error registering device with error : " + err);
+            console.log("Error registering device with error :::::::: " + err);
         }
     };
 
     // Notification Received
-    $scope.$on('pushNotificationReceived', function (event, notification) {
+    $scope.$on('$cordovaPush:notificationReceived', function (event, notification) {
         console.log("Received notification >>>>>>> " + JSON.stringify([notification]));
         if (ionic.Platform.isAndroid()) {
             handleAndroid(notification);
@@ -52,7 +53,7 @@ var UserPreferencesCtrl = function ($scope, $state, $cordovaPush, $ionicPopup, U
             case 'registered':
                 console.log("registering with details : " + notification);
                 registerDeviceTokenForPushNotifications(notification.regid);
-                $state.go("accountsummary");
+                $state.go("chat");
                 break;
 
             case 'message':

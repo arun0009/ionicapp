@@ -11,7 +11,14 @@ var LoginCtrl = function ($scope, $rootScope, $state, $ionicPlatform, LoginServi
     this.authenticateUser = function () {
         LoginService.authenticateUserDeferredRequest(this.username, this.password).then(function (authData) {
             console.log(authData);
-            $state.go("userpreferences")
+            var applaunchCount = window.localStorage.getItem('launchCount');
+            //Show user preference if app launched first time only...
+            if (applaunchCount) {
+                $state.go("chat");
+            }
+            else {
+                $state.go("userpreferences")
+            }
         }, function (error) {
             console.log("Exception occurred while authenticating user :: " + error);
         })
