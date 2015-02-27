@@ -7,6 +7,9 @@ var ChatCtrl = function ($scope, $rootScope, $state, $firebase, ENV) {
     $scope.data = sync.$asArray();
 
     $scope.addComment = function (comment) {
+        if (typeof analytics !== "undefined") {
+            analytics.trackEvent("Chat Message", "Comment", this.username, comment);
+        }
         sync.$push({email: email, value: comment}).then(function (newChildRef) {
             console.log("added record with id " + newChildRef.key());
             $scope.newComment = '';

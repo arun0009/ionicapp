@@ -14,6 +14,9 @@ var LoginCtrl = function ($scope, $rootScope, $state, $ionicPlatform, LoginServi
             var applaunchCount = window.localStorage.getItem('launchCount');
             //Show user preference if app launched first time only...
             if (applaunchCount) {
+                if (typeof analytics !== "undefined") {
+                    analytics.setUserId(this.username);
+                }
                 $state.go("chat");
             }
             else {
