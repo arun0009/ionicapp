@@ -11,4 +11,7 @@ plugins
 *.swp
 *.swo
 *.log
+*.iml
+*.ipr
+*.iws
 *.DS_Store
