@@ -1,0 +1,24 @@
+<ion-view>
+    <ion-header-bar>
+        <h1 class="title">Chat</h1>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="comment in data">
+                {{comment.email}}
+                <b>{{comment.value}}</b>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer item-input-inset">
+        <label class="item-input-wrapper">
+            <input type="search" placeholder="Comment" ng-model="newComment">
+        </label>
+        <button ng-click="addComment(newComment)" class="button button-clear">
+            Add
+        </button>
+    </ion-footer-bar>
+</ion-view>
+
+
+

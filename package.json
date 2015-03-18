@@ -1,0 +1,25 @@
+{
+  "name": "ionicapp",
+  "version": "1.0.0",
+  "description": "ionicapp: An Ionic project",
+  "dependencies": {},
+  "devDependencies": {
+    "globby": "^1.0.0",
+    "gulp": "^3.5.6",
+    "gulp-concat": "^2.2.0",
+    "gulp-extend": "^0.2.0",
+    "gulp-include-source": "0.0.5",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-ng-constant": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^0.7.1",
+    "gulp-uncss": "^0.5.1",
+    "gulp-util": "^3.0.1",
+    "shelljs": "^0.3.0"
+  },
+  "cordovaPlugins": [
+    "org.apache.cordova.geolocation",
+    "org.apache.cordova.device",
+    "org.apache.cordova.console"
+  ]
+}
