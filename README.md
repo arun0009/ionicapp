@@ -1,5 +1,5 @@
 # ionicapp
-Ionic App with Push, Firebase and Google Analytics.
+Ionic App with Parse Push, Firebase for RealTime backend as service and Google Analytics (using ngCordova Plugin). Just want to show best practices for directory structure, environment properties file management with Gulp and handling promises with Deferred pattern and getters n setters. 
 
 This is a hybrid mobile app developed based on ionic framework - http://ionicframework.com/getting-started/
 
