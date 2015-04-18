@@ -1,0 +1,61 @@
+<ion-view view-title="Choose a location">
+    <div class="bar bar-subheader item-input-inset">
+        <button class="button button-clear"
+                ng-click="depositlocations.flip = !depositlocations.flip">
+            <div class="assertive center flip-button" ng-if="depositlocations.flip == false">
+                List
+            </div>
+            <div class="assertive center flip-button" ng-if="depositlocations.flip == true">
+                Map
+            </div>
+        </button>
+        <label class="item-input-wrapper marginLeft">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" ng-model="address">
+        </label>
+        <button class="button button-clear" ng-click="depositlocations.geocode(address)">
+            Search
+        </button>
+    </div>
+    <ion-content class="has-subheader" scroll="false">
+        <div class="flip-container" ng-class="{'clicked': depositlocations.flip}">
+            <div>
+                <div id="message" class="error">
+                    {{ msg }}
+                </div>
+            </div>
+            <div class="flipper full">
+                <div class="front">
+                    <div class="full" ng-show="!depositlocations.flip">
+
+                        <div class="map-shrink">
+                            <div id="map" data-tap-disabled="true"></div>
+                        </div>
+
+                        <div id="mapDetail" ng-if="depositlocations.location" class="list selected-store" ui-sref="stagingdetail">
+                            <a class="item item-thumbnail-left" style="background-color: white">
+                                <img src="img/cvs-pin-drop@3x.png">
+                                <h2>{{depositlocations.location.location.displayName}}</h2>
+                                <p>{{depositlocations.location.location.addressLine1 | capitalize:true}}</br>
+                                    {{depositlocations.location.location.city  | capitalize:true}}, {{depositlocations.location.location.state}}, {{depositlocations.location.location.zipCode}}</br>
+                                    Distance: {{depositlocations.location.distanceInMiles | number : 2}} miles</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="back full">
+                    <div ng-show="depositlocations.flip" class="overflow-scroll">
+                        <div class="list">
+                            <a class="item storeListItem text-center" ng-repeat="location in locations" ng-click="depositlocations.stage(location)">
+                                <h2>{{location.location.displayName}}</h2>
+                                <p>{{location.location.addressLine1 | capitalize:true}}</br>
+                                    {{location.location.city  | capitalize:true}}, {{location.location.state}}, {{location.location.zipCode}}</br>
+                                    Distance: {{location.distanceInMiles | number : 2}} miles</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
