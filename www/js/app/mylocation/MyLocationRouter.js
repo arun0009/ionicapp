@@ -1,13 +1,8 @@
-angular.module('cashload.depositlocations', ['ionic', 'ngResource'])
+angular.module('ionicapp.mylocation', ['ionic'])
    .config(function ($stateProvider) {
-        $stateProvider.state('depositlocations', {
-            url: '/depositlocations',
-            parent: 'menu',
-            views: {
-                'menuContent': {
-                    templateUrl: 'js/app/depositlocations/depositlocations.html',
-                    controller: 'DepositLocationsCtrl as depositlocations'
-                }
-            }
+        $stateProvider.state('mylocation', {
+            url: '/mylocation',
+            controller: "MyLocationCtrl as mylocation",
+            templateUrl: 'js/app/mylocation/mylocation.html'
         })
     });

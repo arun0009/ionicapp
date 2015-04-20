@@ -1,4 +1,4 @@
-angular.module('ionicapp', ['ionic', 'ngCordova', 'firebase', 'ionicapp.login', 'ionicapp.signup', 'ionicapp.userpreferences', 'ionicapp.chat'])
+angular.module('ionicapp', ['ionic', 'ngCordova', 'firebase', 'ionicapp.login', 'ionicapp.signup', 'ionicapp.userpreferences', 'ionicapp.chat', 'ionicapp.mylocation'])
     .config(function ($stateProvider, $urlRouterProvider, $httpProvider, ENV) {
 
         $httpProvider.defaults.headers.common["Accept"] = "application/json";
