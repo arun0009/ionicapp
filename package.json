@@ -25,6 +25,7 @@
     "https://github.com/danwilson/google-analytics-plugin.git"
   ],
   "cordovaPlatforms": [
-    "ios"
+    "ios",
+    "android"
   ]
 }
