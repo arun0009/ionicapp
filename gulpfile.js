@@ -78,14 +78,6 @@ gulp.task('config-prod', function() {
     return config('www/js/config/config-prod.json')
 });
 
-gulp.task('ionic-clean-build', function() {
-    sh.exec('ionic platform rm ios android');
-    require('./plugins.json').forEach(function(plugin) {
-        sh.exec('cordova plugin add ' + plugin);
-    });
-    sh.exec('ionic platform add ios android');
-});
-
 gulp.task('include-scripts', function() {
     return gulp.src('www/index.html')
         .pipe(includeSources())

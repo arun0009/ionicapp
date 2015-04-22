@@ -18,7 +18,7 @@ var UserPreferencesCtrl = function ($scope, $state, $cordovaPush, $ionicPopup, E
             console.log("Register success " + result);
             //NOTE : We only get device token for iOS over here, for android it gets a callback so we will handle it in handleAndroid function.
             if (ionic.Platform.isIOS()) {
-                registerDeviceTokenForPushNotifications(result.regid);
+                registerDeviceTokenForPushNotifications(result);
                 $state.go("chat");
             }
         }, function (err) {

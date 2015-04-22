@@ -9,14 +9,14 @@ This is a hybrid mobile app developed built using ionic framework - http://ionic
 #####Install all modules from package.json using npm
     $ npm install
 
-#####Install the plugins for cordova using gulp:
-    $ gulp ionic-clean-build 
+#####Install the plugins and platform configured in package.json:
+    $ ionic state restore 
 
 #####We use gulp for build system, to build for different environments (e.g. dev, prod)
     1. gulp config-dev
     2. gulp config-prod
     
-    This will replace config.js contents with environment based properties.
+    This will create/replace config.js contents with environment based properties.
 
 #####We use bower-installer (https://github.com/blittle/bower-installer) for installing javascript dependencies.     
 
